@@ -27,7 +27,7 @@ const Projects = () => {
     }
 
     return (
-        <div className='container mx-auto py-4 my-20 px-6 md:px-20 lg:px-32 w-full overflow-hidden' id='Projects'>
+        <div className='container mx-auto py-10 my-20 px-6 md:px-20 lg:px-32 w-full overflow-hidden' id='Projects'>
             <h1 className='text-center text-2xl sm:text-4xl font-bold mb-2'>Projects
                 <span className='underline underline-offset-4 decoration-1 under font-light ml-1'>Completed</span></h1>
             <p className='text-center text-gray-500 max-w-80 mb-8 mx-auto'>Delivering quality and satisfaction to every client.</p>
@@ -51,7 +51,7 @@ const Projects = () => {
                                 <div className='inline-block bg-white shadow-md w-3/4 px-4 py-2'>
                                     <h2 className='font-semibold text-gray-899 text-xl'>{project.title}</h2>
                                     <p className='text-gray-500 text-sm'>
-                                        {project.price} <span></span> {project.location}
+                                        {project.price} <span className='px-0.5'>|</span> {project.location}
                                     </p>
                                 </div>
                             </div>

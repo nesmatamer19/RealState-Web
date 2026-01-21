@@ -22,7 +22,7 @@ function Navbar() {
                     <a href="#Header" className='cursor-pointer hover:text-gray-500'>Home</a>
                     <a href="#About" className='cursor-pointer hover:text-gray-500'>About</a>
                     <a href="#Projects" className='cursor-pointer hover:text-gray-500'>Projects</a>
-                    <a href="#Testmonials" className='cursor-pointer hover:text-gray-500'>Testimonials</a>
+                    <a href="#Testimonials" className='cursor-pointer hover:text-gray-500'>Testimonials</a>
                 </ul>
                 <button className='hidden md:block bg-white px-8 py-2 rounded-full'>Sign Up</button>
                 <img onClick={() => setshowmobilemenu(true)} src={assets.menu_icon} className='cursor-pointer md:hidden w-7' alt="" />
