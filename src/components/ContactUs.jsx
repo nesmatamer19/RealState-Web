@@ -57,7 +57,7 @@ const ContactUs = () => {
             rounded py-3 px-4 mt-2 resize-none h-48'
             name="Message" placeholder='Message' required></textarea>
          </div>
-         <button className='bg-blue-600 text-white py-2 px-12 mb-10 rounded mx-auto flex justify-center'
+         <button className='bg-blue-600 cursor-pointer text-white py-2 px-12 mb-10 rounded mx-auto flex justify-center'
          type="submit">{result ? result : "Send Message"}</button>
         </form>
     </motion.div>
