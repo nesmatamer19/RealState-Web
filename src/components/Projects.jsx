@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { assets, projectsData } from '../assets/assets'
 import { useState } from 'react'
+import { motion } from "framer-motion"
 
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,7 +28,12 @@ const Projects = () => {
     }
 
     return (
-        <div className='container mx-auto py-10 my-20 px-6 md:px-20 lg:px-32 w-full overflow-hidden' id='Projects'>
+        <motion.div 
+             initial={{opacity: 0, x:-200}}
+             transition={{duration: 1}}
+             whileInView={{opacity: 1, x:0}}
+             viewport={{once: true}}
+             className='container mx-auto py-10 my-20 px-6 md:px-20 lg:px-32 w-full overflow-hidden' id='Projects'>
             <h1 className='text-center text-2xl sm:text-4xl font-bold mb-2'>Projects
                 <span className='underline underline-offset-4 decoration-1 under font-light ml-1'>Completed</span></h1>
             <p className='text-center text-gray-500 max-w-80 mb-8 mx-auto'>Delivering quality and satisfaction to every client.</p>
@@ -45,13 +51,19 @@ const Projects = () => {
                 <div className='flex gap-8 transition-transform duration-500 ease-in-out'
                     style={{ transform: `translateX(-${(currentIndex * 100) / cardsToShow}%)` }}>
                     {projectsData.map((project, index) => (
-                        <div key={index} className='relative shrink-0 w-full sm:w-1/4'>
-                            <img src={project.image} alt={project.title} className='w-full h-auto mb-14' />
-                            <div className='absolute left-0 right-0 bottom-5 flex justify-center'>
-                                <div className='inline-block bg-white shadow-md w-3/4 px-4 py-2'>
-                                    <h2 className='font-semibold text-gray-899 text-xl'>{project.title}</h2>
+                        <div key={index} className='relative flex-shrink-0 w-full sm:w-1/4'>
+                            <img src={project.image} alt={project.title} 
+                            className='w-full h-auto mb-14' />
+                            <div className='absolute left-0 right-0 bottom-5 flex 
+                            justify-center'>
+                                <div className='inline-block bg-white shadow-md w-3/4
+                                 px-4 py-2'>
+                                    <h2 className='font-semibold text-gray-800 text-xl'>
+                                        {project.title}
+                                    </h2>
                                     <p className='text-gray-500 text-sm'>
-                                        {project.price} <span className='px-0.5'>|</span> {project.location}
+                                        {project.price} <span className='px-0.5'>|</span> 
+                                        {project.location}
                                     </p>
                                 </div>
                             </div>
@@ -59,7 +71,7 @@ const Projects = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

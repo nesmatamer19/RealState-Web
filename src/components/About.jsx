@@ -1,9 +1,15 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { motion } from 'framer-motion'
 
 const About = () => {
   return (
-    <div className='container flex flex-col justify-center items-center
+    <motion.div 
+     initial={{opacity: 0, x:200}}
+     transition={{duration: 1}}
+     whileInView={{opacity: 1, x:0}}
+     viewport={{once: true}}
+     className='container flex flex-col justify-center items-center
     mx-auto py-10 md:px-20 lg:px-32 w-full overflow-hidden' id='About'>
       <h1 className='text-2xl sm:text-4xl font-bold mb-2'>About
          <span className='underline underline-offset-4 decoration-1 under font-light ml-1'>Our Brand</span></h1>
@@ -36,7 +42,7 @@ const About = () => {
                 <button className='bg-blue-600 text-white px-8 py-2'>Learn more</button>
             </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
